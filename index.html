@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Audio and Video</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div id="navigation">
+      <nav>
+        <button id="prev_btn" class="nav">Prev</button>
+        <button id="next_btn" class="nav">Next</button>
+      </nav>
+    </div>
+  </header>
+
+  <div id="main">
+    <div id="home" class="view">
+      <h3>Introduction</h3>
+      <p>This tool will help you finding if your machine is properly configured for your first year at EPITECH</p>
+        <ul>
+          <li>Hardware recommendation (Memory, Storage, Wireless)</li>
+          <li>Webcam</li>
+          <li>Audio output (via headset)</li>
+          <li>Audio input</li>
+        </ul>
+      </p>
+      <p>At the end you will find a guide to:
+        <ul>
+          <li>Configure a wireless connexion with the IONIS network</li>
+          <li>Install all the packages needed for your first year of coding</li>
+          <li>And other stuff</li>
+        </ul>
+      </p>
+    </div>
+    <div id="system" class="view">
+      <h3>Hardware recommendation</h3>
+      <button id="get_config">Check my hardware</button>
+      <ul>
+        <li>Wifi <span id="wifi">?</span></li>
+        <li>Storage <span id="storage">?</span></li>
+        <li>Memory <span id="memory">?</span></li>
+      </ul>
+    </div>
+    <div id="webcam" class="view">
+      <h3>Webcam</h3>
+      <p>Do you see a video signal from your Webcam ?</p>
+      <video id="webcam_video" autoplay></video>
+    </div>
+    <div id="audio_output" class="view">
+      <h3>Audio output</h3>
+      <p>Plug your headset into your computer and then press "play"</p>
+      <audio controls loop id="audio_out"><source type="audio/ogg" src="wave.ogg"></audio>
+    </div>
+    <div id="audio_input" class="view">
+      <h3>Audio input</h3>
+      <p>Plug your headset into your computer (or keep-it plugged in) press "play" and make some noise. Do your hear the noise you've made ?</p>
+      <audio controls id="audio_in"></audio>
+    </div>
+    <div id="wireless" class="view">
+      <p>Now it's time to connect to the IONIS wireless network</p>
+      <ol>
+        <li>Open a terminal</li>
+        <li>type: <code>sudo update-crypto-policies --set LEGACY</code></li>
+        <li></li>
+        <li>Find the network applet icon in the top left corner of your screen <img src="bar.png"> then choose the IONIS network </li>
+        <li>Configure the network with the correct parameters (cf. Screenshots below)</li>
+      </ol>
+      <img src="term.png">
+      <img src="cmd.png">
+      <img src="ionis_conf.png">
+    </div>
+    <div id="dump" class="view">
+      <h3>Install the "dump"</h3>
+      <ol>
+        <li>Go to <a href="https://github.com/Epitech-Reunion/dump/archive/refs/heads/master.zip">https://github.com/Epitech-Reunion/dump/archive/refs/heads/master.zip</a></li>
+        <li>Extract the downloaded archive</li>
+        <li>Open a terminal in the extracted directory then run <code>sudo ./install_packages_dump.sh</code></li>
+      </ol>
+    </div>
+    <div id="summary" class="view">
+      <p>Here is your report</p>
+    </div>
+    <div id="done" class="view">
+      <p>If everything is OK and the dump is installed: congratulation !</p>
+      <p>But you might double-check with an AER to be sure</p>
+    </div>
+  </div>
+  <div id="answer">
+    Is it all OK ?
+    <button id="ok" class="res" value="OK">Yes</button>
+    <button id="ko" class="res" value="KO">No</button>
+  </div>
+  <footer id="pagination">
+    <p>System: <span id="system_status">?</span> Webcam:<span id="webcam_status">?</span> Audio out: <span id="audio_out_status">?</span> Audio in: <span id="audio_in_status">?</span></p>
+    <span id="view_number">0</span>/<span id="view_max">0</span>
+  </footer>
+  <script src="tester.js" type="text/javascript"></script>
+</body>
+
+</html>
